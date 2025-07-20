@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Self Driving Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="carCanvas"></canvas>
+    <div id="verticalButtons">
+        <div><button class="btn1" id="start_btn">START</button></div>
+        <div id="div2">
+            <label for="mutation_slider" id="mutation_slider_label">Mutation : </label>
+            <input type="range" min="0" max="1" step="0.001" name="variance" id="mutation_slider" value="1">
+            <br>
+            <label for="no_of_cars">Cars : </label>
+            <input type="number" id="no_of_cars" value="100" onchange="">
+        </div>
+        <div id="end_buttons"><button class="btn1" id="save_btn" onclick="save()">SAVE BEST</button>
+            <br>
+            <button class="btn1" id="discard_btn" onclick="discard()">DISCARD</button>
+        </div>
+
+
+
+    </div>
+    <canvas id="networkCanvas"></canvas>
+
+
+    <script type="text/JavaScript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js">
+        import _ from 'lodash';
+    </script>
+    <!-- <script type="module">
+        import _ from 'lodash';
+    </script> -->
+
+    <script src="/visualizer.js"></script>
+    <script src="/network.js"></script>
+    <script src="/utils.js"></script>
+    <script src="/sensors.js"></script>
+    <script src="/controls.js"></script>
+    <script src="/road.js"></script>
+    <script src="/car.js"></script>
+    <script src="/script.js"></script>
+
+    <script>
+        const mutation_slider = document.getElementById("mutation_slider")
+        const mutation_slider_label = document.getElementById("mutation_slider_label")
+        mutation_slider.addEventListener("input", (e) => {
+            mutation_slider_label.innerText = "Mutation : " + ((e.target.value * 100).toFixed(1)) + "%"
+        })
+
+        const no_of_cars = document.getElementById("no_of_cars")
+        let simulation = start_simulation(5, 1);
+
+        const start_btn = document.getElementById("start_btn")
+        start_btn.addEventListener("click", () => {
+            simulation = start_simulation(no_of_cars.value, mutation_slider, mutation_slider_label);
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>

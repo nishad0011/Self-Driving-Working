@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: darkgrey;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+#verticalButtons{
+    box-sizing: border-box;
+    height: 100vh;
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#verticalButtons div{
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label{
+    font-size: 1.2em;
+    margin: 1em;
+}
+input[type=range]{
+    accent-color: hsl(277 100% 46.7%);
+    width: 80%;
+    height: 2em;
+}
+
+#div2 *{
+    color: rgb(36, 36, 36);
+    width: 80%;
+    text-align: start;
+}
+#no_of_cars{
+    box-sizing: border-box;
+    border-radius: 0.8em;
+    width: 80%;
+    height: 2em;
+    background-color: rgb(225, 225, 225);
+    font-size: 1.2em;
+    padding-left: 1em;
+}
+
+.btn1{
+    letter-spacing: 0.4em;
+    color: white;
+    width: 12em;
+    height: 3.2em;
+    border : none;
+    cursor:pointer;
+    font-size: 1.2em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+#start_btn{
+    margin-top: 2em;
+    background-color: hsl(224 87.3% 56.1%);
+}
+#start_btn:hover{
+    background-color: hsl(224, 69%, 46%);
+}
+#save_btn{
+    background-color: hsl(152 70.3% 63.3%);
+}
+#save_btn:hover{
+    background-color: hsl(152, 47%, 54%);
+}
+#discard_btn{
+    background-color: hsl(0 82.2% 69%);
+}
+#discard_btn:hover{
+    background-color: hsl(0, 53%, 59%);
+}
+#end_buttons {
+    margin-bottom: 2em;
+}
+
+
+
+#carCanvas{
+    background-color: lightgray;
+}
+#networkCanvas{
+    background-color: black;
+}
