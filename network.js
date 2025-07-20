@@ -100,7 +100,7 @@ class Level {
             let sum = 0;
             for (let j = 0; j < level.inputs.length; j++) {
                 //sum = level.inputs[j] * level.weights[j][i]; ???????
-                sum += level.inputs[j] * level.weights[j][i];
+                sum = level.inputs[j] * level.weights[j][i];
             }
 
 
