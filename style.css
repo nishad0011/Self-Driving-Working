@@ -1,3 +1,6 @@
+:root{
+    --height: 2rem;
+}
 body{
     margin: 0;
     padding: 0;
@@ -84,10 +87,125 @@ input[type=range]{
 }
 
 
+/* TOGGLE */
+#verticalButtons div div{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+#random_traffic_cb,#load_bestcar_cb{
+    display: none;
+}
+#traffic_label,#loadcar_label{
+    letter-spacing: 0%;
+    color: rgb(52, 52, 52);
+    font: 800 1em "Roboto";
+    width: 80%;
+    display: inline;
+}
+
+.toggle_div label{
+    margin: 1em 0 1em 0.5em;
+    letter-spacing: 0.2em;
+}
+
+.toggle{
+    display: inline;
+    max-width: calc(var(--height) * 2);
+    background-color:hsl(277, 0%, 75%);
+    height: var(--height);
+    border-radius: calc(var(--height) * 0.5); /* 50% of height */
+    transition-duration: 0.2s;
+    justify-content: center;
+}
+.toggle_btn{
+    height: calc(var(--height) * 0.8);
+    max-width:   calc(var(--height) * 0.8);
+    background-color:hsl(277, 100%, 100%);
+    border-radius: 50% /* 50% of height */;
+    transform: translateX(-50%);
+    transition-duration: 0.2s;
+}
+.toggle_enabled{
+    background-color:hsl(277, 100%, 75%);
+}
+.toggle_btn_enabled{
+    background-color:hsl(277, 100%, 50%);
+    transform: translateX(50%);
+
+
+}
+
 
 #carCanvas{
     background-color: lightgray;
 }
 #networkCanvas{
     background-color: black;
+}
+
+@keyframes popIn {
+  0% {
+    transform: translateX(150%) scale(1);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+}
+#toastBox{
+    /* border: 1px solid blue; */
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+.popupDiv{
+    text-align: center;
+    align-content: center;
+    margin: 1em;
+    width: 20em;
+    height: auto;
+    min-height: 3.6em;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, 0.966);
+    border-radius: 0em;
+    box-shadow:0px 0px 20px black ;
+    
+}
+.popupDiv span{
+    font-size: 1.2em;
+    /* background-color: rgba(179, 27, 27, 0.762); */
+    vertical-align:middle;
+}
+.save-icon span{
+    font-size: 1.2em;
+    color: rgb(89, 255, 89);
+}
+.remove-icon span{
+    font-size: 1.2em;
+    color: rgb(255, 255, 66);
+}
+.start-icon span{
+    font-size: 1.2em;
+    color: rgb(95, 95, 255)
+}
+
+.popin{
+    animation: popIn 1s ease-in-out;
+}
+/* .discard{
+    background-color:  hsl(0 82.2% 69%);
+    color: rgba(255, 2rgba(224, 104, 104, 0.762)
+} */
+
+
+/* Google icons */
+.material-symbols-outlined {
+    /* border: 1px solid blue; */
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 500,
+  'GRAD' 0,
+  'opsz' 12
 }

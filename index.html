@@ -4,19 +4,55 @@
 <head>
     <title>Self Driving Car</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 
 <body>
+    <div id="toastBox"></div>
+    <!-- <div id="popupDiv" class="popupDiv">Sample text</div> -->
     <canvas id="carCanvas"></canvas>
     <div id="verticalButtons">
-        <div><button class="btn1" id="start_btn">START</button></div>
+        <div>
+            <button class="btn1" id="start_btn">START</button>
+
+            <!-- Random traffic toggle and label -->
+
+            <div class="toggle_div">
+                <input type="checkbox" id="random_traffic_cb" />
+                <div id="toggle" class="toggle">
+                    <div id="toggle_btn" class="toggle_btn"></div>
+                </div>
+                <label for="random_traffic_cb" id="traffic_label"> Random Traffic</label>
+            </div>
+
+            <div class="toggle_div">
+                <input type="checkbox" id="load_bestcar_cb" />
+                <div id="best_car_toggle" class="toggle">
+                    <div id="best_car_toggle_btn" class="toggle_btn"></div>
+                </div>
+                <label for="load_bestcar_cb" id="loadcar_label"> Use Best Car</label>
+            </div>
+        </div>
+
         <div id="div2">
             <label for="mutation_slider" id="mutation_slider_label">Mutation : </label>
             <input type="range" min="0" max="1" step="0.001" name="variance" id="mutation_slider" value="1">
             <br>
             <label for="no_of_cars">Cars : </label>
-            <input type="number" id="no_of_cars" value="100" onchange="">
+            <input type="number" id="no_of_cars" value="50">
         </div>
+
         <div id="end_buttons"><button class="btn1" id="save_btn" onclick="save()">SAVE BEST</button>
             <br>
             <button class="btn1" id="discard_btn" onclick="discard()">DISCARD</button>
@@ -27,14 +63,6 @@
     </div>
     <canvas id="networkCanvas"></canvas>
 
-
-    <script type="text/JavaScript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js">
-        import _ from 'lodash';
-    </script>
-    <!-- <script type="module">
-        import _ from 'lodash';
-    </script> -->
-
     <script src="/visualizer.js"></script>
     <script src="/network.js"></script>
     <script src="/utils.js"></script>
@@ -44,23 +72,7 @@
     <script src="/car.js"></script>
     <script src="/script.js"></script>
 
-    <script>
-        const mutation_slider = document.getElementById("mutation_slider")
-        const mutation_slider_label = document.getElementById("mutation_slider_label")
-        mutation_slider.addEventListener("input", (e) => {
-            mutation_slider_label.innerText = "Mutation : " + ((e.target.value * 100).toFixed(1)) + "%"
-        })
-
-        const no_of_cars = document.getElementById("no_of_cars")
-        let simulation = start_simulation(5, 1);
-
-        const start_btn = document.getElementById("start_btn")
-        start_btn.addEventListener("click", () => {
-            simulation = start_simulation(no_of_cars.value, mutation_slider, mutation_slider_label);
-        })
-
-
-    </script>
+    <script src="./button_scripts.js"></script>
 
 
 </body>

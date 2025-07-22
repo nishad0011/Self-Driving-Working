@@ -13,7 +13,7 @@ class Visualizer {
 
             ctx.setLineDash([7, 3]);
             Visualizer.drawLevel(ctx, network.levels[i], left, levelTop, width, levelHeight,
-                i == network.levels.length - 1 ? ['↑', '→', '←', '↓'] : []
+                i == network.levels.length - 1 ? ['↑', '←', '→', '↓'] : []
             );
         }
     }
@@ -21,7 +21,7 @@ class Visualizer {
     static drawLevel(ctx, level, left, top, width, height, symbols) {
         const right = left + width;
         const bottom = top + height;
-        const nodeRad = 18;
+        const nodeRad = 25;
         const { inputs, outputs, weights, biases } = level;
 
 

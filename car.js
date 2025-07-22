@@ -44,8 +44,8 @@ class Car {
 
             if (this.useAI) {
                 this.controls.forward = outputs[0];
-                this.controls.left = outputs[2];
-                this.controls.right = outputs[1];
+                this.controls.left = outputs[1];
+                this.controls.right = outputs[2];
                 this.controls.backward = outputs[3];
             }
         }
