@@ -244,6 +244,12 @@ async function start_simulation(N, mutation_slider, randomTraffic = 0, useBest =
             new Car(road.getLaneCenter(1), -500, carWidth, carheight, 'DUMMYCAR', 2),
             new Car(road.getLaneCenter(0), -700, carWidth, carheight, 'DUMMYCAR', 2),
             new Car(road.getLaneCenter(1), -700, carWidth, carheight, 'DUMMYCAR', 2),
+            new Car(road.getLaneCenter(1), -900, carWidth, carheight, 'DUMMYCAR', 2),
+            new Car(road.getLaneCenter(2), -900, carWidth, carheight, 'DUMMYCAR', 2),
+            new Car(road.getLaneCenter(0), -1100, carWidth, carheight, 'DUMMYCAR', 2),
+            new Car(road.getLaneCenter(2), -1100, carWidth, carheight, 'DUMMYCAR', 2),
+            new Car(road.getLaneCenter(1), -1300, carWidth, carheight, 'DUMMYCAR', 2),
+            new Car(road.getLaneCenter(2), -1300, carWidth, carheight, 'DUMMYCAR', 2),
         ];
     }
 

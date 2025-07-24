@@ -17,7 +17,7 @@ body{
     width: 20em;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
 }
 #verticalButtons div{
     letter-spacing: 0.3em;
@@ -83,6 +83,7 @@ input[type=range]{
     background-color: hsl(0, 53%, 59%);
 }
 #end_buttons {
+    margin-top: 2em;
     margin-bottom: 2em;
 }
 
